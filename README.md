@@ -159,7 +159,7 @@ Analysis is conducted at a single ERA5 grid point. Results are representative of
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YourUsername/wind-resource-analysis.git
+git clone https://github.com/aidanw-png/wind-resource-analysis.git
 cd wind-resource-analysis
 python -m venv .venv
 .venv\Scripts\activate        # Windows
