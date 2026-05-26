@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+
+# ERA5 raw data — too large for GitHub
+data/raw/*.nc
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python cache files
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# API credentials — never push these
+.cdsapirc

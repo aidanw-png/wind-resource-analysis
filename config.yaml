@@ -1,0 +1,26 @@
+site:
+  name: "Sydney Offshore"
+  latitude: -34.0
+  longitude: 151.75
+  description: "ERA5 offshore grid point, Tasman Sea"
+
+era5:
+  years: [2019, 2020, 2021, 2022, 2023]
+  reference_height_m: 100.0
+  calm_threshold_ms: 0.5
+
+turbine:
+  name: "NREL 5MW Reference"
+  hub_height_m: 90.0
+  rated_power_mw: 5.0
+  cut_in_ms: 3.0
+  rated_ms: 11.4
+  cut_out_ms: 25.0
+  shear_exponent: 0.11
+  availability: 0.95
+  source: "Jonkman et al. (2009) NREL/TP-500-38060"
+
+paths:
+  raw_data: "data/raw"
+  figures: "outputs/figures"
+  results: "outputs"
