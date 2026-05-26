@@ -123,28 +123,28 @@ The AEP integrand plot below shows the energy contribution at each wind speed. T
 
 The following limitations should be considered when interpreting results. They are consistent with pre-feasibility scope and do not invalidate the methodology, they define where it sits in the broader assessment workflow.
 
-**ERA5 Mesoscale Resolution**
+**ERA5 Mesoscale Resolution:**
 ERA5 has a native horizontal resolution of ~31km. Each grid point represents an area-averaged atmospheric state, not a point 
 measurement. Local terrain effects are not resolved. In professional practice, ERA5 is used as a mesoscale boundary condition 
 for higher-resolution downscaling via WAsP, WindPro, or CFD. This project uses ERA5 directly without downscaling.
 
-**Vertical Extrapolation**
+**Vertical Extrapolation:**
 Wind speeds extrapolated from 100m to 90m hub height using the power law with a fixed offshore shear exponent of α=0.11. The power law assumes a neutral atmospheric stability profile. In reality, shear varies with atmospheric stability, time of day, and season.
 
-**Two-Parameter Weibull**
+**Two-Parameter Weibull:**
 The standard two-parameter Weibull distribution is the industry convention for wind speed characterisation and is used in WindPro 
 and WAsP. It provides a good fit to the bulk of the distribution but slightly underestimates the frequency of near-calm conditions and the weight of the upper tail at this mid-latitude offshore site - both physically attributable to the mixture of synoptic and sea breeze regimes at this location.
 
-**Single Turbine - No Wake Losses**
+**Single Turbine - No Wake Losses:**
 AEP is estimated for a single isolated turbine and so array wake losses are not modelled. A production assessment would apply wake modelling using the Jensen, Gaussian, or full CFD approach depending on array complexity.
 
-**Availability and Loss Factors**
+**Availability and Loss Factors:**
 A flat 95% availability factor is applied. Electrical transmission losses, turbine performance degradation, curtailment, and icing losses are not modelled. A full energy yield assessment would quantify each loss category individually.
 
-**Power Curve**
+**Power Curve:**
 The NREL 5MW reference turbine power curve is used as published in Jonkman et al. (2009). This is a research reference turbine rather than a commercial product. Air density corrections and turbulence intensity effects on power output are not applied.
 
-**Single Site**
+**Single Site:**
 Analysis is conducted at a single ERA5 grid point. Results are representative of the selected offshore location only and should not be interpreted as a site recommendation or a regional resource characterisation.
 
 ## Reproducing the Analysis
