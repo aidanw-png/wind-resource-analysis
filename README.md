@@ -199,5 +199,5 @@ different location or turbine without editing source code.
 ## Author
 
 **Aidan Winning**
-MEng Aero-Mechanical Engineering - University of Strathclyde
+MEng Aero-Mechanical Engineering - University of Strathclyde,
 Peer-reviewed publication in the Journal of Wind Engineering
