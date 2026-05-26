@@ -1,7 +1,7 @@
 # Virtual environment
 .venv/
 
-# ERA5 raw data — too large for GitHub
+# ERA5 raw data
 data/raw/*.nc
 
 # Jupyter notebook checkpoints
@@ -21,5 +21,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# API credentials — never push these
+# API credentials
 .cdsapirc
