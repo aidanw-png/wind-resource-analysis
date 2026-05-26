@@ -83,7 +83,7 @@ the known behaviour of ERA5 area-averaging at mid-latitude offshore sites.
 
 ---
 
-### Wind Rose — 2019–2023
+### Wind Rose: 2019–2023
 
 The dominant wind direction is NNE, consistent with persistent subtropical high pressure systems driving onshore flow from the Coral Sea. A secondary southwesterly signal is visible in the winter months, driven by Southern Ocean westerly systems. The seasonal roses reveal a clear directional shift between summer (NNE dominant) and winter (westerly influence increases).
 
