@@ -1,4 +1,4 @@
-# Wind Resource Analysis — Sydney Offshore
+# Wind Resource Analysis - Sydney Offshore
 
 A Python-based wind resource assessment tool replicating the core 
 statistical pipeline used in pre-feasibility wind energy studies. 
