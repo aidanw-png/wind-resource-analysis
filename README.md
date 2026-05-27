@@ -214,8 +214,10 @@ different location or turbine without editing source code.
 
 - Jonkman, J. et al. (2009). *Definition of a 5-MW Reference Wind Turbine for Offshore System Development*. NREL Technical Report NREL/TP-500-38060. National Renewable Energy Laboratory.https://www.nrel.gov/docs/fy09osti/38060.pdf
 
+- Hesback, H et al. (2020). *The ERA5 global reanalysis*. ERA5 definition. European Union through the Copernicus Climate Change Service. https://doi.org/10.1002/qj.3803
+
 ## Author
 
 **Aidan Winning**
 MEng Aero-Mechanical Engineering - University of Strathclyde,
-Peer-reviewed publication in the Journal of Wind Engineering
+Peer-reviewed publications: https://doi.org/10.1177/0309524X261418581
