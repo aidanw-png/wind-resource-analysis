@@ -22,7 +22,7 @@ def fit_weibull(wind_speeds: np.ndarray,
     fit_speeds = wind_speeds[wind_speeds >= calm_threshold]
     n_calm = len(wind_speeds) - len(fit_speeds)
 
-    # MLE fit — floc=0 enforces two-parameter Weibull
+    # MLE fit - floc=0 enforces two-parameter Weibull
     shape, loc, scale = stats.weibull_min.fit(fit_speeds, floc=0)
 
     k   = shape
@@ -66,7 +66,7 @@ def fit_weibull(wind_speeds: np.ndarray,
         print(f"  Theoretical mean:     {weibull_mean:.4f} m/s")
         print(f"  Observed mean:        {observed_mean:.4f} m/s")
         print(f"  Mean error:           {result['mean_error']:.4f} m/s")
-        print(f"  Interpretation:       k={k:.2f} — {interp}")
+        print(f"  Interpretation:       k={k:.2f} - {interp}")
 
     return result
 

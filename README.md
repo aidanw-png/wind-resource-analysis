@@ -9,14 +9,21 @@ NREL 5MW reference turbine at an offshore Sydney site.
 Built as a portfolio project to demonstrate applied wind energy 
 engineering and data analysis capabilities in Python.
 
+![Python](https://img.shields.io/badge/Python-3.11+-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Project-orange)
+
+![Wind Rose](outputs/figures/13_wind_rose_5yr.png)
+
 ## Industry Context
 
 Wind resource assessment is a critical early stage in wind farm project development. Before committing capital to turbine procurement, grid connection studies, or environmental impact assessments, developers require a statistically credible characterisation of the wind resource at a target site. This pre-feasibility assessment determines whether a site warrants further investment.
 
-In professional practice this pipeline is handled by commercial tools such as WindPro and WAsP. These platforms ingest long-term reanalysis data, most commonly ERA5, fit statistical wind distributions, generate wind roses, and produce energy yield estimates that form the basis of bankable feasibility reports. The goal of this project was to replicate this pipeline in Python, from ERA5 data extraction, weibull fitting using MLE, and numerical AEP integration. The same Weibull parameters, hub height 
+In professional practice this pipeline is handled by commercial tools such as WindPro and WAsP. These platforms ingest long-term reanalysis data, most commonly ERA5, fit statistical wind distributions, generate wind roses, and produce energy yield estimates that form the basis of bankable feasibility reports. The goal of this project was to replicate this pipeline in Python, from ERA5 data extraction, Weibull fitting using MLE, and numerical AEP integration. The same Weibull parameters, hub height 
 corrections, and power curve convolution that this code computes manually are the inputs WindPro uses to generate its energy yield reports.
 
-The methodology is intentionally kept at pre-feasibility scope. A production assessment would additionally apply terrain corrections, long-term wind speed adjustments, turbulence intensity analysis, and array wake modelling. These steps are noted in the limitations section. It is also noted that the location selected for analysis is in no way being suggested for an ideal location.
+The methodology is intentionally kept at pre-feasibility scope. A production assessment would additionally apply terrain corrections, long-term wind speed adjustments, turbulence intensity analysis, and array wake modelling. These steps are noted in the limitations section. The selected location is for methodological demonstration and is not proposed as a candidate site.
+It is also noted that the location selected for analysis is in no way being suggested for an ideal location.
 
 ## Methodology
 
@@ -39,22 +46,28 @@ Directional frequency and mean speed computed across 16 compass sectors (22.5° 
 weighting to identify the dominant energy direction, which differs from the most frequent direction due to the cubic power relationship.
 
 **6. AEP Estimation**
-Annual Energy Production estimated by numerically integrating the product of the NREL 5MW reference turbine power curve and the fitted Weibull PDF using Simpson's rule. A 95% availability factor applied to derive net AEP. Wake losses and electrical losses not modelled.
+Annual Energy Production estimated by numerically integrating the product of the NREL 5MW reference turbine power curve and the fitted Weibull PDF using Simpson's rule. A 95% availability factor is applied to derive net AEP. Wake losses and electrical losses not modelled.
 
 ---
 
 ### Pipeline Summary
 
-```
-ERA5 CDS API 
-→ u/v extraction 
-→ wind speed/direction derivation
-→ Weibull MLE fit 
-→ hub height correction 
-→ wind rose
-→ power curve convolution 
-→ AEP integration 
-→ results
+```mermaid
+flowchart TD
+    A[ERA5 CDS API] --> B[u/v Component Extraction]
+    B --> C[Wind Speed & Direction Derivation]
+    C --> D[Weibull MLE Fit\nk = 2.151, λ = 8.949 m/s]
+    D --> E[Hub Height Correction\n100m → 90m, α = 0.11]
+    E --> F[Wind Rose\n16-sector directional analysis]
+    E --> G[Power Curve Convolution\nNREL 5MW Reference]
+    F --> H[AEP Integration\nSimpson's rule]
+    G --> H
+    H --> I[Results\nGross AEP: 13.971 GWh/yr\nNet CF: 30.3%]
+
+    style A fill:#4169E1,color:#fff
+    style I fill:#2E8B57,color:#fff
+    style D fill:#4682B4,color:#fff
+    style H fill:#4682B4,color:#fff
 ```
 
 ## Results
@@ -171,6 +184,11 @@ pip install -r requirements.txt
 
 Create a credentials file at `~/.cdsapirc`:
 
+```
+url: https://cds.climate.copernicus.eu/api
+key: YOUR-API-KEY-HERE
+```
+
 Accept the ERA5 licence at:
 https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download#manage-licences
 
@@ -189,7 +207,7 @@ Open `notebooks/02_full_analysis.ipynb` and run all cells in order.
 All outputs are saved to `outputs/figures/`.
 
 Site coordinates, turbine parameters, and file paths are configured 
-in `config.yaml` — modify this file to run the analysis for a 
+in `config.yaml` - modify this file to run the analysis for a 
 different location or turbine without editing source code.
 
 ## References

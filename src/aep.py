@@ -87,7 +87,7 @@ def calculate_aep(k_hub: float,
     net_aep_mwh   = gross_aep_mwh * availability
     net_aep_gwh   = net_aep_mwh / 1000
 
-    # Capacity factor — actual output / maximum possible output
+    # Capacity factor - actual output / maximum possible output
     max_annual_mwh = rated_power_mw * hours_per_year
     cf_gross = gross_aep_mwh / max_annual_mwh
     cf_net   = net_aep_mwh   / max_annual_mwh

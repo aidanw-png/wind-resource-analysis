@@ -27,7 +27,7 @@ def load_era5_year(year: int, data_dir: str, lat: float, lon: float) -> pd.DataF
     sel_lat = float(ds_point.latitude)
     sel_lon = float(ds_point.longitude)
 
-    # Extract arrays — convert to numpy immediately, release xarray
+    # Extract arrays - convert to numpy immediately, release xarray
     u    = ds_point.u100.values.astype(np.float64)
     v    = ds_point.v100.values.astype(np.float64)
     time = ds_point.valid_time.values

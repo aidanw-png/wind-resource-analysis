@@ -101,10 +101,10 @@ def print_directional_table(df_sectors: pd.DataFrame) -> None:
     dominant_energy = df_sectors.loc[df_sectors["energy_pct"].idxmax()]
 
     print(f"\n  Most frequent:      {dominant_freq['label']} "
-          f"({dominant_freq['centre_deg']:.1f}°) — "
+          f"({dominant_freq['centre_deg']:.1f}°) - "
           f"{dominant_freq['frequency_pct']:.1f}% of hours")
     print(f"  Most energetic:     {dominant_energy['label']} "
-          f"({dominant_energy['centre_deg']:.1f}°) — "
+          f"({dominant_energy['centre_deg']:.1f}°) - "
           f"{dominant_energy['energy_pct']:.1f}% of energy flux")
 
     if dominant_freq["label"] != dominant_energy["label"]:
